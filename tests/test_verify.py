@@ -2,12 +2,12 @@ import textwrap
 
 import pytest
 
-from carrier_eval.verify.decomposedharm import (
+from blindspot_eval.verify.decomposedharm import (
     classify_grading_functions,
     trace_to_messages,
     verify_with_grader,
 )
-from carrier_eval.verify.wmdp import WmdpItem, WmdpPayload, is_usable, load_wmdp_bio, verify_wmdp
+from blindspot_eval.verify.wmdp import WmdpItem, WmdpPayload, is_usable, load_wmdp_bio, verify_wmdp
 
 from conftest import RAW, needs, split_trace
 
@@ -117,7 +117,7 @@ XLSX = RAW / "decomposedharm-code" / "repo" / "data" / "Transformed_AgentHarm.xl
 @needs(XLSX)
 def test_graded_task_set_and_exact_coverage():
     pytest.importorskip("openpyxl")
-    from carrier_eval.verify.decomposedharm import load_graded_tasks
+    from blindspot_eval.verify.decomposedharm import load_graded_tasks
 
     tasks = load_graded_tasks(XLSX, GRADER_FILE)
     assert len(tasks) == 50

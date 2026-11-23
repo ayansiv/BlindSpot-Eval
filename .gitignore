@@ -9,7 +9,7 @@ __pycache__/
 # Downloaded datasets: licensed, some gated or eval-only. Never commit; see data/README.md to fetch.
 data/raw/
 
-# Run outputs
-work/
-results/
-logs/
+# Run outputs (root only: src/blindspot_eval/results/ is code)
+/work/
+/results/
+/logs/

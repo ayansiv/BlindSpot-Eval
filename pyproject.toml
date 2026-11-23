@@ -3,9 +3,9 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "carrier-eval"
+name = "blindspot-eval"
 version = "0.1.0"
-description = "Agentic carrier-gap eval: do misuse monitors still catch payloads restructured through coding agents?"
+description = "BlindSpot-Eval: do misuse monitors still catch payloads restructured through coding agents?"
 requires-python = ">=3.11"
 dependencies = [
     "inspect_ai>=0.3.200",
@@ -22,7 +22,7 @@ dev = ["pytest"]
 decomposedharm = ["openpyxl"]
 
 [project.scripts]
-carrier-eval = "carrier_eval.cli:main"
+blindspot-eval = "blindspot_eval.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -1,6 +1,6 @@
-from carrier_eval.convert.claude_code import convert_dir, convert_session
-from carrier_eval.convert.inspect_log import convert_eval_log
-from carrier_eval.schema import TraceTree, read_jsonl, write_jsonl
+from blindspot_eval.convert.claude_code import convert_dir, convert_session
+from blindspot_eval.convert.inspect_log import convert_eval_log
+from blindspot_eval.schema import TraceTree, read_jsonl, write_jsonl
 
 from conftest import RAW, needs, split_trace
 

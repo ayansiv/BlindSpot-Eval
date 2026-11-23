@@ -18,8 +18,8 @@ from pathlib import Path
 
 from pydantic import BaseModel
 
-from carrier_eval.schema import TraceTree
-from carrier_eval.verify.base import Outcome, all_units, normalize, released_units
+from blindspot_eval.schema import TraceTree
+from blindspot_eval.verify.base import Outcome, all_units, normalize, released_units
 
 QUESTION_PREFIX_CHARS = 60
 

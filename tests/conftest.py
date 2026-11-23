@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest
 
-from carrier_eval.convert.builder import TraceBuilder
-from carrier_eval.schema import Labels, ToolCall
+from blindspot_eval.convert.builder import TraceBuilder
+from blindspot_eval.schema import Labels, ToolCall
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data" / "raw"

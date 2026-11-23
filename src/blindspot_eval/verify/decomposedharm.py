@@ -26,8 +26,8 @@ import sys
 from pathlib import Path
 from typing import Any, Callable
 
-from carrier_eval.schema import StepRef, TraceTree
-from carrier_eval.verify.base import Outcome
+from blindspot_eval.schema import StepRef, TraceTree
+from blindspot_eval.verify.base import Outcome
 
 JUDGE_FUNCTIONS = {"semantic_judge", "llm"}
 GradeFn = Callable[[dict[str, Any], list[dict[str, Any]]], dict[str, bool]]

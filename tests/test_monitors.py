@@ -3,9 +3,9 @@ import json
 
 import pytest
 
-from carrier_eval.monitors.config import MonitorConfig, ScorerSpec, load_config
-from carrier_eval.monitors.replay import render_units, replay_sync
-from carrier_eval.monitors.scorers import KeywordScorer, ModelScorer
+from blindspot_eval.monitors.config import MonitorConfig, ScorerSpec, load_config
+from blindspot_eval.monitors.replay import render_units, replay_sync
+from blindspot_eval.monitors.scorers import KeywordScorer, ModelScorer
 
 from conftest import ROOT, split_trace
 

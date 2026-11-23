@@ -5,7 +5,7 @@ from __future__ import annotations
 import hashlib
 from typing import Any
 
-from carrier_eval.schema import (
+from blindspot_eval.schema import (
     Context,
     ContextFile,
     FileWrite,

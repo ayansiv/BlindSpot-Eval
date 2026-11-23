@@ -1,8 +1,8 @@
 import json
 
-from carrier_eval.cli import main
-from carrier_eval.schema import write_jsonl
-from carrier_eval.verify.wmdp import WmdpItem, WmdpPayload
+from blindspot_eval.cli import main
+from blindspot_eval.schema import write_jsonl
+from blindspot_eval.verify.wmdp import WmdpItem, WmdpPayload
 
 from conftest import split_trace
 

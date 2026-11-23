@@ -15,9 +15,9 @@ from typing import Iterable
 
 from pydantic import BaseModel, Field
 
-from carrier_eval.monitors.config import MonitorConfig
-from carrier_eval.monitors.scorers import NotesUpdater, Scorer, make_notes_updater, make_scorer
-from carrier_eval.schema import Context, Step, TraceTree
+from blindspot_eval.monitors.config import MonitorConfig
+from blindspot_eval.monitors.scorers import NotesUpdater, Scorer, make_notes_updater, make_scorer
+from blindspot_eval.schema import Context, Step, TraceTree
 
 ALL_CONTEXTS = "*"
 

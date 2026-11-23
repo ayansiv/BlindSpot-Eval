@@ -1,6 +1,6 @@
-"""carrier-eval: convert -> verify -> sanitize -> replay -> frontier.
+"""blindspot-eval: convert -> verify -> sanitize -> replay -> frontier.
 
-Run with `python -I -m carrier_eval.cli ...` (or the `carrier-eval` script) when
+Run with `python -I -m blindspot_eval.cli ...` (or the `blindspot-eval` script) when
 inputs come from downloaded data, so nothing on the data side can shadow imports.
 """
 
@@ -11,18 +11,18 @@ import json
 import sys
 from pathlib import Path
 
-from carrier_eval.schema import read_jsonl, write_jsonl
+from blindspot_eval.schema import read_jsonl, write_jsonl
 
 
 def _convert_inspect(a: argparse.Namespace) -> None:
-    from carrier_eval.convert.inspect_log import convert_eval_log
+    from blindspot_eval.convert.inspect_log import convert_eval_log
 
     traces = [t for p in a.logs for t in convert_eval_log(p)]
     print(f"{write_jsonl(traces, a.out)} traces -> {a.out}")
 
 
 def _convert_claude_code(a: argparse.Namespace) -> None:
-    from carrier_eval.convert.claude_code import convert_dir, convert_session
+    from blindspot_eval.convert.claude_code import convert_dir, convert_session
 
     p = Path(a.path)
     traces = convert_dir(p) if p.is_dir() else [convert_session(p)]
@@ -30,8 +30,8 @@ def _convert_claude_code(a: argparse.Namespace) -> None:
 
 
 def _verify_wmdp(a: argparse.Namespace) -> None:
-    from carrier_eval.verify.base import apply_outcome
-    from carrier_eval.verify.wmdp import WmdpPayload, verify_wmdp
+    from blindspot_eval.verify.base import apply_outcome
+    from blindspot_eval.verify.wmdp import WmdpPayload, verify_wmdp
 
     payloads = {p["payload_id"]: WmdpPayload.model_validate(p) for p in json.loads(Path(a.payloads).read_text())}
     traces = read_jsonl(a.traces)
@@ -47,7 +47,7 @@ def _verify_wmdp(a: argparse.Namespace) -> None:
 
 
 def _sanitize(a: argparse.Namespace) -> None:
-    from carrier_eval.sanitize import mapping_json, sanitize_all
+    from blindspot_eval.sanitize import mapping_json, sanitize_all
 
     traces = read_jsonl(a.traces)
     clean, labels, mapper = sanitize_all(traces, seed=a.seed, remap_paths=not a.keep_paths)
@@ -59,8 +59,8 @@ def _sanitize(a: argparse.Namespace) -> None:
 
 
 def _replay(a: argparse.Namespace) -> None:
-    from carrier_eval.monitors.config import load_config
-    from carrier_eval.monitors.replay import replay_sync
+    from blindspot_eval.monitors.config import load_config
+    from blindspot_eval.monitors.replay import replay_sync
 
     cfg = load_config(a.arm)
     traces = read_jsonl(a.traces)
@@ -73,10 +73,10 @@ def _replay(a: argparse.Namespace) -> None:
 
 
 def _frontier(a: argparse.Namespace) -> None:
-    from carrier_eval.monitors.replay import ScoreTimeline
-    from carrier_eval.results.frontier import carrier_frontiers
-    from carrier_eval.results.plots import plot_arm, results_table
-    from carrier_eval.sanitize import LabelRecord
+    from blindspot_eval.monitors.replay import ScoreTimeline
+    from blindspot_eval.results.frontier import carrier_frontiers
+    from blindspot_eval.results.plots import plot_arm, results_table
+    from blindspot_eval.sanitize import LabelRecord
 
     labels = read_jsonl(a.labels, LabelRecord)
     out = Path(a.out_dir)
@@ -95,7 +95,7 @@ def _frontier(a: argparse.Namespace) -> None:
 
 
 def _classify_graders(a: argparse.Namespace) -> None:
-    from carrier_eval.verify.decomposedharm import classify_grading_functions
+    from blindspot_eval.verify.decomposedharm import classify_grading_functions
 
     cls = classify_grading_functions(a.path)
     exact = sorted(n for n, judge in cls.items() if not judge)
@@ -106,7 +106,7 @@ def _classify_graders(a: argparse.Namespace) -> None:
 
 
 def main(argv: list[str] | None = None) -> None:
-    ap = argparse.ArgumentParser(prog="carrier-eval")
+    ap = argparse.ArgumentParser(prog="blindspot-eval")
     sub = ap.add_subparsers(dest="cmd", required=True)
 
     p = sub.add_parser("convert-inspect", help="Inspect eval logs -> trace trees")

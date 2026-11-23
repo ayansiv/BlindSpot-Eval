@@ -1,16 +1,16 @@
 import numpy as np
 import pytest
 
-from carrier_eval.monitors.replay import ScorePoint, ScoreTimeline
-from carrier_eval.results.frontier import (
+from blindspot_eval.monitors.replay import ScorePoint, ScoreTimeline
+from blindspot_eval.results.frontier import (
     carrier_frontiers,
     case_score,
     partial_auc_log,
     tpr_at_fpr,
     verdict_flip_rate,
 )
-from carrier_eval.results.plots import plot_arm, results_table
-from carrier_eval.sanitize import LabelRecord
+from blindspot_eval.results.plots import plot_arm, results_table
+from blindspot_eval.sanitize import LabelRecord
 
 
 def tl(tid, points, arm="arm"):

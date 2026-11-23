@@ -22,8 +22,8 @@ import json
 from pathlib import Path
 from typing import Any
 
-from carrier_eval.convert.builder import TraceBuilder, file_write_from_call
-from carrier_eval.schema import Context, StepRef, ToolCall, TraceTree
+from blindspot_eval.convert.builder import TraceBuilder, file_write_from_call
+from blindspot_eval.schema import Context, StepRef, ToolCall, TraceTree
 
 ROOT = "main"
 CONTEXT_FILE_ATTACHMENTS = {"nested_memory", "file"}

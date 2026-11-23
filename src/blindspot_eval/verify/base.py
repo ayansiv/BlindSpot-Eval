@@ -20,7 +20,7 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-from carrier_eval.schema import Labels, StepRef, TraceTree
+from blindspot_eval.schema import Labels, StepRef, TraceTree
 
 
 class Outcome(BaseModel):

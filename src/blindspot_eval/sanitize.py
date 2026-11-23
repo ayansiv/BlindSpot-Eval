@@ -21,7 +21,7 @@ import re
 from pathlib import PurePosixPath
 from typing import Any, Iterable
 
-from carrier_eval.schema import Labels, TraceTree
+from blindspot_eval.schema import Labels, TraceTree
 
 CONVENTIONAL_NAMES = {
     "CLAUDE.md", "AGENTS.md", "GEMINI.md", "README.md", "SKILL.md",

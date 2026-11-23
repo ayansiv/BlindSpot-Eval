@@ -25,8 +25,8 @@ from typing import Any
 from inspect_ai.event import ModelEvent, SpanBeginEvent, SpanEndEvent, ToolEvent
 from inspect_ai.log import EvalSample, read_eval_log
 
-from carrier_eval.convert.builder import TraceBuilder, file_write_from_call
-from carrier_eval.schema import Context, Labels, StepRef, ToolCall, TraceTree
+from blindspot_eval.convert.builder import TraceBuilder, file_write_from_call
+from blindspot_eval.schema import Context, Labels, StepRef, ToolCall, TraceTree
 
 ROOT = "main"
 

@@ -1,5 +1,5 @@
-from carrier_eval.convert.builder import TraceBuilder
-from carrier_eval.sanitize import sanitize_all
+from blindspot_eval.convert.builder import TraceBuilder
+from blindspot_eval.sanitize import sanitize_all
 
 from conftest import split_trace
 
