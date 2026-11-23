@@ -1,0 +1,17 @@
+{
+    "name":  "M4_tree_full",
+    "channels":  [
+                     "user",
+                     "assistant",
+                     "tool_args",
+                     "tool_results",
+                     "context_files"
+                 ],
+    "scope":  "session_tree",
+    "cadence":  "per_step",
+    "history":  "full",
+    "scorer":  {
+                   "type":  "model",
+                   "model":  "${MONITOR_MODEL}"
+               }
+}

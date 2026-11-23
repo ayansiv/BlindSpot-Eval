@@ -1,0 +1,21 @@
+{
+    "name":  "oracle",
+    "channels":  [
+                     "system",
+                     "user",
+                     "assistant",
+                     "tool_args",
+                     "tool_results",
+                     "context_files",
+                     "attachments",
+                     "meta"
+                 ],
+    "scope":  "session_tree",
+    "cadence":  "per_step",
+    "history":  "full",
+    "scorer":  {
+                   "type":  "model",
+                   "model":  "${ORACLE_MODEL}",
+                   "max_tokens":  16
+               }
+}

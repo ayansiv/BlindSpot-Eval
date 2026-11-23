@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "carrier-eval"
+version = "0.1.0"
+description = "Agentic carrier-gap eval: do misuse monitors still catch payloads restructured through coding agents?"
+requires-python = ">=3.11"
+dependencies = [
+    "inspect_ai>=0.3.200",
+    "pydantic>=2",
+    "numpy",
+    "pandas",
+    "pyarrow",
+    "matplotlib",
+    "huggingface_hub",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+decomposedharm = ["openpyxl"]
+
+[project.scripts]
+carrier-eval = "carrier_eval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["data: needs datasets downloaded under data/raw (skipped if missing)"]

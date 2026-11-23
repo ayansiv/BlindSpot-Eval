@@ -1,0 +1,14 @@
+{
+    "name":  "M0_message",
+    "channels":  [
+                     "user",
+                     "assistant"
+                 ],
+    "scope":  "message",
+    "cadence":  "per_step",
+    "history":  "full",
+    "scorer":  {
+                   "type":  "model",
+                   "model":  "${MONITOR_MODEL}"
+               }
+}

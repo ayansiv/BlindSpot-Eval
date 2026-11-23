@@ -1,0 +1,18 @@
+{
+    "name":  "M5_account_buffer",
+    "channels":  [
+                     "user",
+                     "assistant",
+                     "tool_args",
+                     "tool_results",
+                     "context_files"
+                 ],
+    "scope":  "account",
+    "cadence":  "end",
+    "history":  "buffer",
+    "buffer_m":  30,
+    "scorer":  {
+                   "type":  "model",
+                   "model":  "${MONITOR_MODEL}"
+               }
+}
