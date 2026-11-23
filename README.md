@@ -1,6 +1,7 @@
-# carrier-eval
+# BlindSpot-Eval
 
-Plumbing for the agentic carrier-gap eval. The design, decisions and rationale are in
+Do misuse monitors for AI coding agents still catch a request when it arrives indirectly, through context files, tool output, subagents or across sessions?
+The Python package is `carrier_eval` and the command is `carrier-eval`. The design, decisions and rationale are in
 [`agentic-carrier-gap-eval.md`](agentic-carrier-gap-eval.md). This README covers how to run the code.
 
 ## Setup

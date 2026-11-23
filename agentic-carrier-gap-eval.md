@@ -1,4 +1,6 @@
-# Agentic carrier-gap eval: design sketch
+# BlindSpot-Eval: design sketch
+
+Measures the carrier gap: how much worse misuse monitors do when a request reaches a coding agent indirectly.
 
 Draft, 2026-11-21
 
